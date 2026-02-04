@@ -1,0 +1,12 @@
+.env
+db.sqlite3
+__pycache__/
+.vscode/
+*.pyc
+venv/
+./tracker/settings.py
+
+
+
+.venv/
+
