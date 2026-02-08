@@ -69,7 +69,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'tracker.middleware.ForceCorsMiddleware', # NUCLEAR OPTION: Force CORS headers
     'corsheaders.middleware.CorsMiddleware',
     'clerk.middleware.ClerkMiddleware',
 
@@ -80,6 +79,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tracker.middleware.ForceCorsMiddleware', # Ensure CORS headers are set on final response
 ]
 
 ROOT_URLCONF = 'tracker.urls'
@@ -174,6 +174,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True # Temporary fix for debugging
+CORS_ALLOW_CREDENTIALS = True
 
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
