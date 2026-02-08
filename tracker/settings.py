@@ -46,12 +46,12 @@ ALLOWED_HOSTS = [
     ]
 
 #Gemini api key
-GOOGLE_API_KEY = "AIzaSyDsVBDtGlpD_VFrRE4n78Sjp_3BlK86foA"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 #clerk api key
-CLERK_API_KEY = "sk_test_HkuN37S8AkqxM61iGEp5Qjh4TN4JZdaQ0Acb4xFLdi"
+CLERK_API_KEY = os.getenv("CLERK_API_KEY")
 
-CLERK_JWT_PEM_PUBLIC_KEY = "pk_test_c291Z2h0LWJpcmQtNC5jbGVyay5hY2NvdW50cy5kZXYk"
+CLERK_JWT_PEM_PUBLIC_KEY = os.getenv("CLERK_JWT_PEM_PUBLIC_KEY")
 
 # Application definition
 
@@ -167,6 +167,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
+    "http://127.0.0.1:5173",
     "https://moneynotes.vercel.app",
 ]
 

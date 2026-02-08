@@ -35,4 +35,4 @@ class ExpenseSerializer(serializers.ModelSerializer):
 class UserSettingSerializer(serializers.ModelSerializer):
     class Meta:
         model = userSetting
-        fields = ['monthly_start_date']
+        fields = ['theme']
