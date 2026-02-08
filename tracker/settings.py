@@ -172,6 +172,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://money-tracker-frontend-kappa.vercel.app",
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True # Temporary fix for debugging
+
+
 CORS_ALLOW_HEADERS = list(default_headers) + [
     "authorization",
     "content-type",
