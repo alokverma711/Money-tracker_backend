@@ -21,6 +21,12 @@ class BaseClerkViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     def get_clerk_id(self):
+        # 1. Try standard DRF authenticated user (set by ClerkAuthentication)
+        if self.request.user and self.request.user.is_authenticated:
+            if hasattr(self.request.user, 'id'):
+                return self.request.user.id
+                
+        # 2. Fallback to the middleware attribute
         user_obj = getattr(self.request, 'clerk_user', None)
         if user_obj:
             return user_obj.id
