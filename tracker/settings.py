@@ -69,6 +69,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'tracker.middleware.ForceCorsMiddleware', # NUCLEAR OPTION: Force CORS headers
     'corsheaders.middleware.CorsMiddleware',
     'clerk.middleware.ClerkMiddleware',
 
